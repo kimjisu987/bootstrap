@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_문단_텍스트관련</title>
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <h2>05_문단_텍스트관련</h2>
+  <p>부트스트랩에서는 기본 글자크기가 16px, 행높이(줄간격)은 1.428값이 기본값이다.</p>
+  <p>위 내용은 문단태그(p)요소에 자동으로 적용되며, 하단여백(margin)은 16px이 기본값이다.</p>
+
+  <h1>제목 1 - 40px</h1>
+  <h2>제목 2 - 32px</h2>
+  <h3>제목 3 - 28px</h3>
+  <h4>제목 4 - 24px</h4>
+  <h5>제목 5 - 20px</h5>
+  <h6>제목 6 - 16px</h6>
+
+  <p>제목요소의 마진값은 기본 8px로 설정(아래)</p>
+
+  <small>small : 글자를 작게 설정함(14px)</small><br>
+  <mark>mark : 글자에 하이라이트 효과를 적용함(16px)</mark><br>
+  <abbr>abbr : 약어나 줄임말을 사용하고자 할 때 사용함(16px)</abbr><br>
+  <blockquote>blockquote : 다른 사람의 말이나 글을 대신하여 작성할 때 사용함(16px)</blockquote>
+  <blockquote class="blockquote-footer">blockquote class 'blockquote-footer' : 다른 사람의 말이나 글을 대신하여 작성할 때 사용함(글자크기 14px, 색상 #6c757d)</blockquote>
+
+  애플 ceo 스티브잡스<br><br>
+  <blockquote class="blockquote-footer">우리의 실패는 경험으로부터 강해졌다.</blockquote>
+
+  <dl>
+    <dt>용어제목</dt>
+    <dd>용어설명</dd>
+  </dl>
+
+  <code>
+    code : 문서 안에서 태그이름을 표시하기 위한 태그로서 색상이 '자주색'으로 변경됨
+    let gnb = document.getElementById('gnb');
+  </code>
+
+  <p class="text-muted">class 'text-muted' : 텍스트의 중요도에 따라 문자의 색상을 다르게 표시할 수 있다.(그레이)</p>
+  <p class="text-primary">class 'text-primary' : 텍스트의 중요도에 따라 문자의 색상을 다르게 표시할 수 있다.(파랑)</p>
+  <p class="text-success">class 'text-success' : 텍스트의 중요도에 따라 문자의 색상을 다르게 표시할 수 있다.(그린)</p>
+  <p class="text-info">class 'text-info' : 텍스트의 중요도에 따라 문자의 색상을 다르게 표시할 수 있다.(하늘)</p>
+  <p class="text-warning">class 'text-warning' : 텍스트의 중요도에 따라 문자의 색상을 다르게 표시할 수 있다.(노랑)</p>
+  <p class="text-danger">class 'text-danger' : 텍스트의 중요도에 따라 문자의 색상을 다르게 표시할 수 있다.(빨강)</p>
+  <p class="bg-info">class 'bg-info' : 상황별로 문자의 배경색을 적용할 수 있다.(하늘)</p>
+  <p class="bg-primary">class 'bg-primary' : 상황별로 문자의 배경색을 적용할 수 있다.(파랑)</p>
+  <p class="bg-success">class 'bg-success' : 상황별로 문자의 배경색을 적용할 수 있다.(초록)</p>
+  <p class="bg-dark">class 'bg-dark' : 상황별로 문자의 배경색을 적용할 수 있다.(검정)</p>
+  <p class="bg-light">class 'bg-light' : 상황별로 문자의 배경색을 적용할 수 있다.(연회색)</p>
+  <p class="bg-warning">class 'bg-warning' : 상황별로 문자의 배경색을 적용할 수 있다.(노랑)</p>
+  <p class="bg-danger">class 'bg-danger' : 상황별로 문자의 배경색을 적용할 수 있다.(빨강)</p>
+
+  <h3>문단관련 서식</h3>
+  <p class="lead">class 'lead' : 단락을 눈에 띄게 하기(글자크기 20px)</p>
+  <p class="small">class 'small' : 상위문자 크기의 85% = 14px로 문자크기를 작게 설정함</p>
+  <p class="text-start">class 'text-start' : 문단정렬(왼쪽 정렬)</p>
+  <p class="text-end">class 'text-end' : 문단정렬(오른쪽 정렬)</p>
+  <p class="text-center">class 'text-center' : 문단정렬(가운데 정렬)</p>
+  <p class="text-justify">class 'text-justify' : 양쪽 배분 정렬</p>
+  <p class="text-nowrap">class 'text-nowrap' : 문단 끝에서 글자가 다음 줄로 넘어가지 않게 설정함</p>
+  <p class="text-uppercase">class 'text-uppercase' : 영문자를 무조건 대문자로 출력</p>
+  <p class="text-lowercase">class 'text-lowercase' : 영문자를 무조건 소문자로 출력</p>
+  <p class="text-capitalize">class 'text-capitalize' : 영문자의 첫글자만 대문자로 출력</p>
+
+  <h3>목록태그</h3>
+  <ul class="list-unstyled">
+    <li>class 'list-unstyled' : 목록 기호를 숨긴다.</li>
+    <li>목록태그 가로배치 방법 : inline, inline-block, float:left, flex, grid</li>
+    <li>부트스트랩에서는 class 'list-inline-item'으로 가로배치 할 수 있다.</li>
+    <li class="list-inline-item">가로배치</li>
+    <li class="list-inline-item">가로배치</li>
+    <li class="list-inline-item">가로배치</li>
+  </ul>
+
+  <ol class="list-unstyled">
+    <li>class 'list-unstyled' : 목록 기호를 숨긴다.</li>
+    <li>순서있는 목록</li>
+    <li>순서있는 목록</li>
+  </ol>
+
+</body>
+</html>
