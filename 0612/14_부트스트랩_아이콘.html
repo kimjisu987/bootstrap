@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14_부트스트랩_아이콘</title>
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    hr{color: #ccc; border-width: 15px; margin-block: 30px;}
+    i{font-size: 40px;}
+    button i{font-size: inherit;}
+  </style>
+</head>
+<body>
+  <h2>14_부트스트랩_아이콘(icon)</h2>
+  <dl>
+    <dt>아이콘 삽입하는 방법</dt>
+    <dt>gif, png, svg이미지를 제작하여 img태그로 삽입</dt>
+    <dt>폰트어썸 cdn주소, 구글폰트에서 제공하는 아이콘 삽입</dt>
+    <dt>bootstrap에서 제공하는 아이콘 삽입</dt>
+  </dl>
+  <p>bootstrap에서는 기본적으로 아이콘 세트가 포함되어 있지는 않지만 bootstrap icon이라는 자체적인 종합아이콘 라이브러리가 있다. 자유롭게 사용할 수 있으며 프로젝트에 있는 다른 아이콘 세트와도 함께 사용할 수 있다.</p>
+  <p>대부분의 아이콘 세트는 여러 유형의 확장자를 지원하지만 bootstrap은 향상된 접근법 및 벡터 지원을 위해서 svg로 구현하는 것을 선호한다.</p>
+  <p>bootstrap에서는 SVG, SVG스프라이트, 아이콘 폰트를 제공한다.</p>
+  <hr>
+
+  <h3>1. svg이미지 삽입하기</h3>
+  <p>삽입하고자 하는 아이콘의 이름을 검색하여 클릭한 후 svg소스코드를 복사하여 붙여넣기를 한다.</p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+  </svg>
+  <hr>
+
+  <h3>2. 아이콘 폰트 이름으로 삽입하기</h3>
+  <p>찾고자 하는 아이콘의 클래스명을 찾아서 i, span 태그 안에 클래스명을 작성하여 삽입한다. bootstrap에서 제공하는 아이콘 폰트의 주소(cdn)을 복사하여 붙여넣기 한다.</p>
+  리스트 <i class="bi bi-list"></i> <i class="bi bi-three-dots-vertical"></i><br>
+  검색 <i class="bi bi-search"></i> <i class="bi bi-zoom-in"></i> <i class="bi bi-zoom-out"></i><br>
+  <button class="btn btn-primary"><i class="bi bi-search"></i> button</button><br>
+  SNS아이콘(페이스북, 인스타그램, 유투브) <i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i> <i class="bi bi-youtube"></i> <i class="bi bi-twitter-x"></i> <i class="bi bi-line"></i> <i class="bi bi-messenger"></i> <i class="bi bi-apple"></i><br>
+  닫기 버튼 <i class="bi bi-x-lg"></i><br>
+  사용자 <i class="bi bi-person"></i> <i class="bi bi-person-circle"></i><br>
+  장바구니 <i class="bi bi-bag"></i> <i class="bi bi-cart"></i> <i class="bi bi-cart3"></i> <i class="bi bi-cart4"></i><br>
+  북마크 <i class="bi bi-bookmark"></i> <i class="bi bi-bookmark-check"></i> <i class="bi bi-bookmark-fill"></i><br>
+  좌, 우, 위, 아래 방향 버튼 <i class="bi bi-arrow-left"></i> <i class="bi bi-arrow-right"></i> <i class="bi bi-arrow-up"></i> <i class="bi bi-arrow-down"></i> <i class="bi bi-arrow-left-circle"></i> <i class="bi bi-arrow-right-circle"></i> <i class="bi bi-arrow-up-circle"></i> <i class="bi bi-arrow-down-circle"></i> <i class="bi bi-chevron-left"></i> <i class="bi bi-chevron-right"></i> <i class="bi bi-chevron-up"></i> <i class="bi bi-chevron-down"></i><br>
+  정지, 플레이버튼 <i class="bi bi-play"></i> <i class="bi bi-pause"></i> <i class="bi bi-stop"></i> <i class="bi bi-play-fill"></i> <i class="bi bi-pause-fill"></i> <i class="bi bi-stop-fill"></i> <i class="bi bi-play-circle-fill"></i> <i class="bi bi-pause-circle-fill"></i> <i class="bi bi-stop-circle-fill"></i><br>
+  홈 <i class="bi bi-house"></i> <i class="bi bi-house-door"></i><br>
+  마우스 <i class="bi bi-mouse2"></i> <i class="bi bi-mouse"></i><br>
+  주차 <i class="bi bi-p-circle"></i> <i class="bi bi-p-square"></i><br>
+  글작성 <i class="bi bi-pencil-square"></i><br>
+  지도 <i class="bi bi-geo-alt"></i> <i class="bi bi-pin-map-fill"></i><br>
+  연락처 <i class="bi bi-telephone"></i><br>
+  교통편 <i class="bi bi-airplane"></i> <i class="bi bi-train-front"></i> <i class="bi bi-bus-front"></i> <i class="bi bi-car-front-fill"></i> <i class="bi bi-ev-front-fill"></i> <i class="bi bi-fuel-pump"></i> <i class="bi bi-scooter"></i> <i class="bi bi-backpack"></i> <i class="bi bi-suitcase2"></i><br>
+  커뮤니티 <i class="bi bi-chat-dots"></i> <i class="bi bi-chat-text"></i><br>
+  체크 <i class="bi bi-check-lg"></i> <i class="bi bi-clipboard2-check"></i><br>
+  카테고리 <i class="bi bi-cup-hot"></i> <i class="bi bi-shop"></i><br>
+  결제 <i class="bi bi-credit-card"></i><br>
+  <hr>
+
+</body>
+</html>

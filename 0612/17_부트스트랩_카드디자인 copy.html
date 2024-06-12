@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14_카드디자인</title>
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    hr{color: #ccc; border-width: 15px; margin-block: 30px;}
+    body{margin-bottom: 100px;}
+
+    /* .card_box{max-width: 1200px; height: max-content;} */
+    img{width: 100%;}
+    a{text-decoration: none; color: inherit;}
+    .card-subtitle{color: #009c75; margin-block: 1rem; font-weight: bold; font-size: 16px;}
+    .card-title{font-size: 20px; color: #333; font-weight: bold; margin-bottom: 2rem;}
+    .card-text{font-size: 14px; color: #8d8d8d;}
+    .text_price{font-size: 20px; color: #333; text-align: right; font-weight: bold;}
+  </style>
+</head>
+<body>
+  <h2>14_카드디자인</h2>
+  <p>카드는 유연하고 확장이 가능한 컨테이너이다. Headers나 Footers의 옵션, 다양한 콘텐츠, 문맥에 따른 배경색, 강력한 표시 옵션이 포함되어 있다.</p>
+  <p>카드는 적은 마크업과 스타일로 되어 있지만, 다양한 사용자 정의가 가능하다. Flexbox로 만들어져 있어 쉽게 배치할 수 있고, 다른 컴포넌트와 조합이 가능하다. 기본값에는 margin 설정이 없어서 필요에 따라 간격 유틸리티를 사용한다.</p>
+  <hr>
+
+  <h4>1. 카드 컨텐츠 기본</h4>
+  <ul>
+    <li>부모박스에 class="card"를 적용한다.</li>
+    <li>자식요소 박스에 class="card-body"를 적용한다.</li>
+    <li>"card-body" 안에 제목 요소는 class="card-title"을 적용한다.</li>
+    <li>"card-body" 안에 문단 요소(p)는 class="card-text"를 적용한다.</li>
+    <li>"card-body" 안에 링크 요소(a)는 2개 이상일 경우 인라인을 배치하기 위해 class="card-link"를 적용한다.</li>
+  </ul>
+  <div class="card" style="width: 18rem;">
+    <!-- <img src="https://picsum.photos/300/300/?image=77" alt="샘플이미지"> -->
+    <img src="https://placehold.it/300x300" alt="샘플이미지">
+    <div class="card-body">
+      <h4>콘텐츠 제목</h4>
+      <p>콘텐츠 설명을 적어준다.</p>
+      <a href="#" title="콘텐츠 바로가기">콘텐츠 바로가기</a>
+    </div>
+  </div>
+  <br>
+  <div class="card" style="width: 22rem;">
+    <!-- <img src="https://picsum.photos/300/300/?image=77" alt="샘플이미지"> -->
+    <img src="https://placehold.it/300x300" alt="샘플이미지">
+    <div class="card-body">
+      <h4 class="card-title">콘텐츠 제목</h4>
+      <h6 class="card-subtitle mb-2 text-body-secondary">콘텐츠 소제목</h6>
+      <p class="card-text">콘텐츠 설명을 적어준다.</p>
+      <a href="#" title="콘텐츠 바로가기" class="btn btn-primary card-link">콘텐츠 바로가기</a>
+      <a href="#" title="콘텐츠 바로가기" class="btn btn-primary card-link">콘텐츠 바로가기</a>
+    </div>
+  </div>
+  <hr>
+
+  <h4>2. 카드 컨텐츠 - 가로배치</h4>
+  <p></p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col">
+      <div class="card h-100">
+        <a href="#" title="상품 자세히 보기">
+        <img src="./images/img1.png" alt="해외여행 이미지">
+        <div class="card-body">
+          <h6 class="card-subtitle">해외여행</h6>
+          <h5 class="card-title">[홈쇼핑인기상품]오사카3일 (꽉찬패턴)</h5>
+          <p class="card-text">#꽉찬패턴 #오사카시내호텔 #천연온천대욕장 #에코플랜 #특식</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p class="card-text text_price">599,900원 ~</p>
+      </div>
+      </a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <a href="#" title="상품 자세히 보기">
+        <img src="./images/img2.png" alt="해외여행 이미지">
+        <div class="card-body">
+          <h6 class="card-subtitle">해외여행</h6>
+          <h5 class="card-title">[NEW]푸켓세미팩 5일(핵심+자유+맛집탐방)</h5>
+          <p class="card-text">#산호섬 #마사지 #올드타운 #과일시장 #사이먼쇼 #푸켓맛집 #쓰리몽키스 #틴 바론 럭셔리 레스토랑</p>
+        </div>
+        <div class="card-footer">
+          <p class="card-text text_price">729,900원 ~</p>
+        </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100">
+        <a href="#" title="상품 자세히 보기">
+        <img src="./images/img3.png" alt="해외여행 이미지">
+        <div class="card-body">
+          <h6 class="card-subtitle">해외여행</h6>
+          <h5 class="card-title">[비교불가]장가계 원가계+천문산4일</h5>
+          <p class="card-text">5성급/발마사지/보봉호VIP/천문산/원가계/백룡엘리베이터/보봉호</p>
+        </div>
+        <div class="card-footer">
+          <p class="card-text text_price">429,000원 ~</p>
+        </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

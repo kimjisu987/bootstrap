@@ -33,7 +33,7 @@
       <h2 class="text-center">게시판 글 입력</h2>
 
       <table class="table table-striped">
-        <caption>글입력하기</caption>
+        <caption>글 입력하기</caption>
         <thead>
           <tr>
             <td scope="row"><label for="subject">제목</label></td>

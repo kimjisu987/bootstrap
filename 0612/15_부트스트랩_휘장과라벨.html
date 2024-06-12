@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15_휘장과 라벨</title>
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    hr{color: #ccc; border-width: 15px; margin-block: 30px;}
+    .bi-cart{font-size: 50px;}
+    .cart_badge{
+      font-style: normal;
+      font-size: 12px;
+      transform: translate(-32px, -28px);
+    }
+    .small_badge{
+      font-style: normal;
+      font-size: 3px;
+      }
+    .btn-light .small_badge{transform: translate(-6px, 6px);}
+    .bi-three-dots .small_badge{transform: translate(6px, 0px);}
+    .ex_box{width: 100px; display: inline-block;}
+  </style>
+</head>
+<body>
+  <h2>15_휘장과 라벨</h2>
+  <p>휘장(배지)는 링크와 함께 얼마나 많은 항목을 가지고 있는지를 나타내는 숫자표시나 new, 상태표시를 하기 위하여 사용한다.</p>
+  <hr>
+  <h4>1. 기본 배지 삽입하기</h4>
+  <p>span 태그에 class="badge text-bg-primary" 서식을 추가하면 배지 디자인으로 변경된다.</p>
+  <p>모서리를 둥글게 하려면 "rounded-pill" 서식을 추가하면 적용된다.</p>
+  <span>none</span>
+  <span class="badge text-bg-primary">Primary</span>
+  <span class="badge text-bg-primary rounded-pill">1</span>
+  <span class="badge text-bg-primary rounded-pill">new</span>
+  <span class="badge text-bg-secondary">secondary</span>
+  <span class="badge text-bg-secondary rounded-pill">2</span>
+  <span class="badge text-bg-success">success</span>
+  <span class="badge text-bg-success rounded-pill">3</span>
+  <span class="badge text-bg-danger">danger</span>
+  <span class="badge text-bg-danger rounded-pill">4</span>
+  <span class="badge text-bg-danger rounded-pill">+999</span>
+  <span class="badge text-bg-warning">warning</span>
+  <span class="badge text-bg-warning rounded-pill">5</span>
+  <span class="badge text-bg-warning rounded-pill">best</span>
+  <span class="badge text-bg-info">info</span>
+  <span class="badge text-bg-info rounded-pill">6</span>
+  <span class="badge text-bg-light">light</span>
+  <span class="badge text-bg-light rounded-pill">7</span>
+  <span class="badge text-bg-dark">dark</span>
+  <span class="badge text-bg-dark rounded-pill">8</span>
+  <hr>
+
+  <h4>2. button 태그에 배지 삽입하기</h4>
+  <button>none</button>
+  <button class="btn btn-secondary">button <span class="badge text-bg-danger rounded-pill">3</span></button>
+  <hr>
+
+  <h4>3. 아이콘 옆에 배지 삽입하기</h4>
+  <i class="bi bi-cart">
+    <span class="cart_badge badge text-bg-danger rounded-pill">3</span>
+  </i>
+  <hr>
+
+  <h4>4. 버튼(메뉴) 옆에 배지삽입하기</h4>
+  <button class="btn btn-light position-relative">메뉴
+    <span class="small_badge badge text-bg-danger rounded-pill count position-absolute top-0 end-0">&nbsp;</span>
+  </button>
+  <br>
+  <i class="bi bi-three-dots position-relative">
+    <span class="small_badge badge text-bg-danger rounded-circle position-absolute top-0 end-0">&nbsp;</span>
+  </i>
+  <hr>
+
+  <h4>부트스트랩 예시</h4>
+  <div class="ex_box">
+    <button type="button" class="btn btn-primary position-relative">
+      Mails <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary">+99 <span class="visually-hidden">unread messages</span></span>
+    </button>
+  </div>
+  
+  <div class="ex_box position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
+    Marker <svg width="1em" height="1em" viewBox="0 0 16 16" class="position-absolute top-100 start-50 translate-middle mt-1" fill="var(--bs-secondary)" xmlns="http://www.w3.org/2000/svg"><path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>
+  </div>
+  
+  <div class="ex_box">
+    <button type="button" class="btn btn-primary position-relative">
+      Alerts <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
+    </button>
+  </div>
+  <hr>
+
+  <h4>5. 배지 모서리 둥글게 - 약간</h4>
+  <span class="badge text-bg-info">none</span>
+  <span class="badge text-bg-info">1</span>
+  <hr>
+
+  <h4>6. 배지 모서리 둥글게 - 많이</h4>
+  <span class="badge text-bg-info rounded-pill">rounded-pill</span>
+  <span class="badge text-bg-info rounded-pill">2</span>
+  <span class="badge text-bg-info rounded-circle">rounded-circle</span>
+  <span class="badge text-bg-info rounded-circle">3</span>
+  <hr>  
+
+</body>
+</html>

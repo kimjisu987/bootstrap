@@ -4,75 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자유게시판 - 검색 목록</title>
-  <style>
-    *{margin: 0; padding: 0;}
-    body{font-size: 14px;}
-    main{max-width: 1200px; margin: 0 auto;}
-    section h2{text-align: center; margin-block: 30px;}
-    table{
-      max-width: 1200px;
-      margin: 0 auto; padding: 3%;
-      line-height: 200%;
-      border-collapse: collapse;
-    }
-    table a{text-decoration: none; color: #000; font-weight: 600;}
-    table tr{
-      border-bottom: 1px solid #ddd;
-    }
-    table caption, table thead{display: none;}
-    /* table{display: flex; flex-wrap: wrap;} */
-    table tbody{border-top: 1px solid #000;}
-    table tbody tr:hover *{color: #215499;}
-    table tbody tr td:nth-of-type(1){width: 20%; float: left; margin-top: 30px; padding-left: 10px; box-sizing: border-box;}
-    table tbody tr td:nth-of-type(2){width: 80%; float: right; margin-top: 30px; padding-right: 10px; box-sizing: border-box;}
-    table tbody tr td:nth-of-type(3){
-      width: 80%;
-      float: right;
-      margin-bottom: 30px; padding-right: 10px;
-      box-sizing: border-box;
-      color: #666; font-size: 13px;
-      line-height: 160%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      word-break: break-word;
-        
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    .w_btn, .s_btn{text-align: center; margin-block: 30px;}
-    .w_btn a, .s_btn input[type="submit"]{
-      display: inline-block;
-      text-decoration: none;
-      width: 190px; height: 40px;
-      padding: 10px 15px;
-      border: none;
-      background: #215499;
-      color: #fff;
-      cursor: pointer;
-      text-align: center;
-      box-sizing: border-box;
-      font-weight: normal;
-    }
-    .w_btn a:last-of-type{background: #333; margin-left: 10px;}
-    .s_btn input[type="submit"]{background: #333;}
-    .s_btn input[type="search"]{
-      width: 250px; height: 34px;
-      box-sizing: border-box;
-      border-width: 1px;
-      background: #fff;
-      outline-color: #215499;
-      padding-inline: 15px;
-      margin-inline: 10px;
-    }
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    main{max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box;}
+    section{width: 95%; margin: 0 auto;}
+    h2{margin-block: 30px;}
+    caption{display: none;}
     pre{
       width: 100%;
       white-space: pre-wrap;
       word-wrap: break-word;
       font-family: "Malgun Gothic";
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-word;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
-    footer{text-align: center; margin-block: 100px 30px;}
+    tbody td:first-of-type{width: 10%; min-width: 100px;}
+    .current{background: #0b5ed7; color: #fff;}
+    footer{text-align: center; margin-block: 30px;}
   </style>
 </head>
 <body>
@@ -84,13 +44,12 @@
 
   <!-- 메인 콘텐츠 -->
   <main>
-  <form name="글 목록" method="post" action="./search.php" onsubmit="return formCheck();">
-    <section>
+    <h2 class="text-center">게시판 글 검색 목록</h2>     
+    <form name="글 목록" method="post" action="./search.php" onsubmit="return formCheck();">
       <section>
-        <h2>게시판 글 검색 목록</h2>        
-        <table>
+        <table class="table table-hover">
           <caption>게시판 글 검색 목록</caption>
-          <thead>
+          <thead class="table-dark text-center">
             <tr>
               <th>작성일</th><th>제목</th><th>내용</th>
             <tr>
@@ -105,7 +64,7 @@
         ?>
             <tr>
               <td><?php echo date("Y-m-d", strtotime($row['datetime']))?></td>
-              <td><a href="view.php?id=<?php echo $row['id']?>" title="<?php echo $row['subject']?>">
+              <td><a href="../view.php?id=<?php echo $row['id']?>" title="<?php echo $row['subject']?>">
             <?php echo $row['subject']?></a></td>
               <td><?php echo $row['memo'] ?></td>
               <!-- echo $row['id'] -->
@@ -116,14 +75,16 @@
           </tbody>
 
         </table>
-        <p class="s_btn">
-          <input type="search" id="search" name="search" placeholder="제목 또는 내용을 입력하세요.">
-          <input type="submit" value="검색" id="search_btn">
+        <div class="text-center input-group mb-3">
+          <input type="search" id="search" name="search" placeholder="제목 또는 내용을 입력하세요." class="form-control">
+          <input type="submit" value="검색" id="search_btn" class="btn btn-dark">
+          <a href="write.php" title="글쓰기" class="btn btn-primary">글쓰기</a>
+        </div>
+        <p class="text-center">
+          <a href="../list.php" title="글 목록" class="btn btn-dark">전체글 목록</a>
         </p>
-        <p class="w_btn">
-          <a href="../write.php" title="글쓰기">글쓰기</a>
-          <a href="../list.php" title="글 목록" class="list">전체글 목록</a>
-        </p>
+
+
       </section>
     </form>
   </main>

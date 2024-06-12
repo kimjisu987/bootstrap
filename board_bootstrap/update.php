@@ -28,71 +28,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자유게시판 - 글 수정하기</title>
-  <link rel="stylesheet" href="./css/board.css" type="text/css">
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <style>
-    table thead tr:first-of-type{border-top: 1px solid #000;}
-    .pw_box{text-align: center;}
-    table input[type="password"]{
-      width: 190px; height: 34px;
-      box-sizing: border-box;
-      border-width: 1px;
-      background: #fff;
-      outline-color: #215499;
-      padding-inline: 15px;
-      margin-inline: 10px;
-    }
-    tbody tr:nth-of-type(3), tbody tr:last-of-type{
-      width: 100%;
-      text-align: center;
-    }
-    table tbody tr:nth-of-type(3), table tbody tr:nth-of-type(5){border-bottom: 1px solid #000;}
-    pre{
-      width: 100%;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      font-size: 14px;
-      font-family: "Malgun Gothic";
-    }
+    main{max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box;}
+    section{max-width: calc(1200px - 5%); width: 95%; margin: 0 auto;}
+    table{width: 95%;}
+    h2{margin-block: 30px;}
+    caption{display: none;}
+    textarea{resize: none;}
+    footer{text-align: center; margin-block: 30px;}
   </style>
 </head>
 <body>
   <form name="글 수정하기" method="post" action="./php/update_input.php" onsubmit="return formCheck();">
   <input type="hidden" name="id" value="<?php echo $row['id']?>">
     <section>
-      <h2>게시판 글 수정하기</h2>
+      <h2 class="text-center">게시판 글 수정하기</h2>
 
-      <table>
+      <table class="table table-striped">
         <caption>글 수정하기</caption>
         <thead>
           <tr>
             <td scope="row"><label for="subject">제목</label></td>
-            <td scope="row"><input type="text" name="subject" id="subject" maxlength="255" autofocus value="<?php  echo $row[1] ?>"></td>
+            <td scope="row"><input type="text" name="subject" id="subject" maxlength="255" autofocus value="<?php  echo $row[1] ?>" class="form-control"></td>
             <!-- 스크립트 안할 경우 'required' 넣어줄 것 -->
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><label for="name">작성자</label></td>
-            <td><input type="text" name="name" id="name" maxlength="50" value="<?php  echo $row[2] ?>" readonly></td>
+            <td><input type="text" name="name" id="name" maxlength="50" value="<?php  echo $row[2] ?>" readonly class="form-control"></td>
           </tr>
           <tr>
             <td><label for="memo">내용</label></td>
-            <td><textarea name="memo" id="memo" cols="50" rows="20"><?php  echo $row[3] ?></textarea></td>
+            <td><textarea name="memo" id="memo" cols="50" rows="20" class="form-control"><?php  echo $row[3] ?></textarea></td>
           </tr>
-          <tr>
+          <tr class=text-center>
             <td colspan="2">
-              <a href="./list.php" title="글 목록" class="list">글 목록</a>
+              <a href="./list.php" title="글 목록" class="btn btn-light">글 목록</a>
             </td>
           </tr>
           <tr>
-            <td colspan="2" class="pw_box">
-              <label for="pwd">비밀번호</label><input type="password" id="pwd" name="pwd" autoComplete="off">
-            </td>
+            <td><label for="pwd" class="form-label">비밀번호</label></td>
+            <td><input type="password" id="pwd" name="pwd" autoComplete="off" class="form-control"></td>
           </tr>
-          <tr>
+          <tr class="text-center">
             <td colspan="2">
-            <input type="submit" value="수정하기">
-            <input type="reset" value="입력 취소">
+            <input type="submit" value="수정하기" class="btn btn-success">
+            <input type="reset" value="입력 취소" class="btn btn-dark">
             </td>
           </tr>
         </tfoot>

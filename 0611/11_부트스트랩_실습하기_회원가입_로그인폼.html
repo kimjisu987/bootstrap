@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11_실습하기_회원가입_로그인폼</title>
+  <!-- 1. CDN 방식으로 연결하기 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 부트스트랩 아이콘 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body{margin-top: 50px;}
+    form{width: 500px;}
+    legend{margin-block: 30px;}
+    label{font-weight: bold;}
+    form .submit_btn{margin-top: 20px;}
+    form .submit_btn input{margin-top: 20px;}
+    hr{border-width: 2px; color: #ccc;}
+  </style>
+</head>
+<body>
+  <form name="" method="" action="" class="row g-3 m-auto needs-validation" novalidate>
+    <legend class="text-center fw-bold">회원가입</legend>
+
+    <!-- 이름 -->
+    <div class="col-md-6">
+      <label for="f_name" class="form-label">First name</label>
+      <input type="text" id="f_name" placeholder="홍" class="form-control" maxlength="15" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="l_name" class="form-label">Last name</label>
+      <input type="text" id="l_name" placeholder="길동" class="form-control" maxlength="15" required>
+    </div>
+
+    <!-- 닉네임 -->
+    <div class="col-md-12">
+      <label for="username" class="form-label">Username</label>
+      <div class="input-group">
+        <span class="input-group-text fw-bold">@</span>
+        <input type="text" maxlength="15" id="username" class="form-control" placeholder="Username" maxlength="255" required>
+      </div>
+    </div>
+
+    <!-- 이메일 -->
+    <div class="col-md-12">
+      <label for="email" class="form-label">Email <span class="fw-normal">(Optional)</span></label>
+      <input type="email" id="email" placeholder="you@example.com" class="form-control" maxlength="255" required>
+    </div>
+
+    <!-- 비밀번호 -->
+    <div class="col-md-12">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" placeholder="1 ~ 8 자리" class="form-control" autocomplete="off" maxlength="255" required>
+    </div>
+
+    <!-- 비밀번호 확인 -->
+    <div class="col-md-12">
+      <label for="password2" class="form-label">Password2 <span class="fw-normal">(재확인)</span></label>
+      <input type="password" id="password2" placeholder="똑같이 입력해주세요." class="form-control" autocomplete="off" maxlength="255" required>
+    </div>
+
+    <!-- 선택목록 -->
+      <div class="col-md-4">
+        <label class="form-label">도시</label>
+        <select name="" id="" class="form-select" required>
+          <option selected disabled value="">도/시</option>
+          <option value="서울시">서울시</option>
+          <option value="경기도">경기도</option>
+          <option value="제주도">제주도</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">구</label>
+        <select name="" id="" class="form-select" required>
+          <option selected disabled value="">구/동/읍</option>
+          <option value="종로구">종로구</option>
+          <option value="중랑구">중랑구</option>
+          <option value="강남구">강남구</option>
+        </select>
+      </div>
+      
+      <!-- 버튼 -->
+      <div class="text-center submit_btn">
+        <hr>
+        <input type="submit" value="가입하기" class="btn btn-primary">
+        <input type="reset" value="취소하기" class="btn btn-dark">
+      </div>
+        
+  </form>
+</body>
+</html>

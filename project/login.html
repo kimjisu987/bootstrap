@@ -12,7 +12,7 @@
 
   <style>
     *{color: #333;}
-    body{height: 200vh;}
+    body{max-width: 500px; margin: 0 auto;}
     .header_con{margin: 0 auto; font-weight: bold;}
     .header_con a{display: inline-block; padding: 5px;}
     .header_con a{font-size: 25px; color: #333;}
@@ -25,16 +25,11 @@
     main .text_box h2{font-weight: bold;}
     main .text_box p{font-size: 14px; color: #858585;}
 
-    main form label{font-weight: bold;}
-    main form input[type="text"], main form input[type="password"]{height: 50px; margin-top: 5px;}
-    main form small{font-size: 13px; color: #858585;}
-    main form span{color: #eb0000; font-size: 14px;}
+    /* main form .main_con{text-align: center;} */
+    main form .find_box a{text-decoration: none; color: #858585; font-size: 14px;}
+    main form .pw_find{padding-inline: 8%; margin-inline: 8%; border-inline: 1px solid #c7c7c7;}
 
-    main form .main_con{text-align: center;}
-    main form .main_con a{text-decoration: none; color: #858585; font-size: 14px;}
-    main form .main_con div:not(:last-of-type){border-right: 1px solid #cccccc;}
-
-    main form input[type="submit"]{width: 100%; padding-block: 10px; margin-block: 20px; font-size: 16px; background: #719eff; border-color: #719eff;}
+    main form input[type="submit"]{width: 100%; padding-block: 10px;font-size: 16px; background: #719eff; border-color: #719eff;}
 
     main form .login_con{text-align: center;}
     main form .login_con img{
@@ -49,23 +44,20 @@
     main form .login_text{text-align: center; color: #858585; margin-top: 20px; font-weight: bold; font-size: 14px;}
     main form .pw_box{position: relative;}
 
-    main form .pw_box i:before{
-      content: "\F33E";
-      font-family: "bootstrap-icons";
-      font-style: normal;
+    /* 패스워드 눈모양 */
+    main form .pw_box i{
+      font-size: 20px;
       display: block;
       position: absolute;
-      top: 62px; right: 9px;
-      color: #719eff;
+      top: 35px; right: 45px;
+      color: #276cff;
       cursor: pointer;
       padding: 5px;
-      transition: 0.3s;}
-    main form .pw_box i:hover:before{
-      content: "\F33F";
-      color: #0b5ed7;
+      transition: 0.3s;
     }
 
     nav .nav_con{
+      width: 100%; max-width: 500px;
       position: fixed;
       bottom: 0px;
       width: 100%; margin: 0;
@@ -82,7 +74,7 @@
       background: #fff;
       border-radius: 50%;
       border: 1px solid #ddd;
-      box-shadow: 0px 0px 6px #ddd;
+      box-shadow: 0px 4px 6px #ddd;
     }
     nav .nav_con .map_icon i{
       display: inline-block;
@@ -102,55 +94,67 @@
     nav .nav_con .nav_icon_l{border-radius: 30px 30px 0px 0px; box-shadow: -4px -4px 6px #ddd;}
     nav .nav_con .nav_icon_r{border-radius: 30px 30px 0px 0px; box-shadow: 4px -4px 6px #ddd;}
     nav .nav_con .nav_icon_l a, nav .nav_con .nav_icon_r a{padding: 15px;}
+
     footer{text-align: center;}
   </style>
 </head>
 <body>
   <header>
-    <div class="container-fluid row header_con">
-      <div class="col"><a href="#" title="뒤로가기"><i class="bi bi-chevron-left"></i></a></div>
-      <div class="col">로그인</div>
-      <div class="col"><a href="index.html" title="메인화면으로 바로가기"><i class="bi bi-house-door"></i></a></div>
-    </div>
-  </header>
-
-  <main>
-    <div class="text_box">
-      <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPe73bo_WNeQoY6DJ1tdd-zxl6B21fKyxBA&s" alt="로고이미지"></p>
-      <h2>함께 여행을 떠나볼까요?</h2>
-      <p>로그인이 필요한 서비스에요</p>
-    </div>
-
-    <form name="login" method="post" action="./php/login_check.php" onsubmit="return form_check();">
-    <div>
-      <p>
-        <label for="id">아이디</label><br>
-        <input type="text" name="id" id="id" class="form-control" placeholder="이메일을 입력해 주세요">
-      </p>
-      <p class="pw_box">
-        <label for="pw">비밀번호</label><br>
-          <small>8자 이상의 영문, 숫자, 특수문자(!@#$%&)사용</small><br>
-        <input type="password" name="pw" id="pw" class="form-control" placeholder="비밀번호를 입력해 주세요" autocomplete="off"><br>
-        <span>8자 이상의 영문, 숫자, 특수문자(!@#$%&)사용</span>
-        <i></i>
-      </p>
-      <div class="container-fluid row main_con">
-        <div class="col"><a href="#" title="아이디 찾기">아이디 찾기</a></div>
-        <div class="col"><a href="#" title="비밀번호 찾기">비밀번호 찾기</a></div>
-        <div class="col"><a href="#" title="회원가입">회원가입</a></div>
+      <div class="container-fluid row header_con">
+        <div class="col"><a href="#" title="뒤로가기"><i class="bi bi-chevron-left"></i></a></div>
+        <div class="col">로그인</div>
+        <div class="col"><a href="index.html" title="메인화면으로 바로가기"><i class="bi bi-house-door"></i></a></div>
       </div>
-      <input type="submit" value="로그인" class="btn btn-primary">
-    </div>
+    </header>
 
-    <p class="login_text">간편로그인</p>
-    <div class="container-fluid row login_con">
-      <div class="col"><a href="javascript:void(0);" onclick="kakaoLogin()" title="카카오 로그인"><img src="https://cdn.icon-icons.com/icons2/2429/PNG/512/kakaotalk_logo_icon_147272.png" alt="카카오톡 로고"></a></div>
-      <div class="col"><a href="#" title="네이버 로그인"><img src="https://clova-phinf.pstatic.net/MjAxODAzMjlfOTIg/MDAxNTIyMjg3MzM3OTAy.WkiZikYhauL1hnpLWmCUBJvKjr6xnkmzP99rZPFXVwgg.mNH66A47eL0Mf8G34mPlwBFKP0nZBf2ZJn5D4Rvs8Vwg.PNG/image.png" alt="네이버 로고"></a></div>
-      <div class="col"><a href="#" title="구글 로그인"><img src="https://png.pngtree.com/png-vector/20230817/ourmid/pngtree-google-internet-icon-vector-png-image_9183287.png" alt="구글로고"></a></div>
-      <div class="col"><a href="#" title="애플 로그인"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png" alt="애플로고"></a></div>
-    </div>
+    <main>
+      <div class="text_box">
+        <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPe73bo_WNeQoY6DJ1tdd-zxl6B21fKyxBA&s" alt="로고이미지"></p>
+        <h2>함께 여행을 떠나볼까요?</h2>
+        <p>로그인이 필요한 서비스에요</p>
+      </div>
 
-  </div>
+      <form name="login" method="post" action="./php/login_check.php" class="row g-3 m-auto needs-validation" novalidate id="signupForm">
+        <div class="col-md-12">
+          <label for="id" class="form-label fw-bold">아이디</label>
+          <input type="text" name="id" id="id" class="form-control form-control-lg" placeholder="이메일을 입력해 주세요" maxlength="255" required>
+          <div class="valid-feedback">
+            사용가능한 이메일 주소입니다.
+          </div>
+          <div class="invalid-feedback">
+            이메일 주소를 입력해주세요.
+          </div>
+        </div>
+
+        <div class="col-md-12 pw_box">
+          <label for="pw" class="form-label fw-bold">비밀번호</label>
+          <input type="password" name="pw" id="pw" class="form-control form-control-lg" placeholder="비밀번호를 입력해 주세요" autocomplete="off" maxlength="15" required>
+          <div class="valid-feedback">
+            사용가능한 비밀번호입니다.
+          </div>
+          <div class="invalid-feedback">
+            8자 ~ 15자의 영문, 숫자, 특수문자(!@#$%&)를 사용해서 입력해주세요.
+          </div>
+          <i class="eye_icon bi-eye-slash"></i>
+        </div>
+
+        <div class="col-md-12 find_box text-center">
+          <a href="#" title="아이디 찾기">아이디 찾기</a>
+          <a href="#" title="비밀번호 찾기" class="pw_find">비밀번호 찾기</a>
+          <a href="#" title="회원가입">회원가입</a>
+        </div>
+
+        <div class="col-md-12">
+          <input type="submit" value="로그인" class="btn btn-primary">
+        </div>
+
+        <p class="login_text">간편로그인</p>
+        <div class="container-fluid row login_con">
+          <div class="col"><a href="javascript:void(0);" onclick="kakaoLogin()" title="카카오 로그인"><img src="https://cdn.icon-icons.com/icons2/2429/PNG/512/kakaotalk_logo_icon_147272.png" alt="카카오톡 로고"></a></div>
+          <div class="col"><a href="#" title="네이버 로그인"><img src="https://clova-phinf.pstatic.net/MjAxODAzMjlfOTIg/MDAxNTIyMjg3MzM3OTAy.WkiZikYhauL1hnpLWmCUBJvKjr6xnkmzP99rZPFXVwgg.mNH66A47eL0Mf8G34mPlwBFKP0nZBf2ZJn5D4Rvs8Vwg.PNG/image.png" alt="네이버 로고"></a></div>
+          <div class="col"><a href="#" title="구글 로그인"><img src="https://png.pngtree.com/png-vector/20230817/ourmid/pngtree-google-internet-icon-vector-png-image_9183287.png" alt="구글로고"></a></div>
+          <div class="col"><a href="#" title="애플 로그인"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png" alt="애플로고"></a></div>
+        </div>
     </form>
   </main>
 
@@ -172,70 +176,142 @@
     <address>copyright&copy; 2024 company, all rights reserved.</address>
   </footer>
 
-    <!-- 카카오톡 로그인 -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script>
-      Kakao.init('882c925fe653067057ded7c6bd865a96');
-  
-      // sdk초기화여부판단
-      console.log(Kakao.isInitialized());
-      //카카오로그인 
-      function kakaoLogin() {
-        //Kakao.Auth.authorize()
-        Kakao.Auth.login({
-        success: function (response) {
-          Kakao.API.request({ 
-            url: '/v2/user/me', success: function (response) {
-                console.log(response)
-              }, fail: function (error) { 
-                console.log(error)
-              }, 
-            })
-            }, fail: function (error) { 
-            console.log(error) 
-          }, 
-        }) 
-      } 
-  
-      //카카오로그아웃 
-      function kakaoLogout() {
-        if (Kakao.Auth.getAccessToken()) { 
-          Kakao.API.request({
-            url: '/v1/user/unlink',
-          })
-          .then(function(response) {
-            console.log(response);
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
-          // Kakao.API.request({ 
-          // url: '/v1/user/unlink', success: function (response) { 
-          // console.log(response) 
-          // }, fail: function (error) { 
-          //   console.log(error) }, 
-          //});
-        Kakao.Auth.setAccessToken(undefined) 
-      }}
-    </script>
-  
-  <!-- 유효성 검사 스크립트 -->
+  <!-- 비밀번호 정규식 패턴
+    참고사이트 : https://velog.io/@bunny/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%A0%95%EA%B7%9C%EC%8B%9D-%ED%8C%A8%ED%84%B4
+    영문 숫자 조합 8자리 이상
+    let reg = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
+    영문 숫자 특수기호 조합 8자리 이상
+    let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/-->
+
+  <!-- 유효성검사 -->
   <script>
-    function form_check(){
-      let id = document.getElementById('id');
-      let pw = document.getElementById('pw');
-      if(id.value.trim() == ''){
-        alert('아이디를 입력하세요.');
-        id.focus();
-        return false;
+    document.addEventListener("DOMContentLoaded", function() {
+      // 이메일주소 유효성 여부를 저장할 변수를 만들고, 초기값 false 부여
+      let isIdValid = false;
+      // 이메일 주소 정규식 패턴
+      const idPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      // 비밀번호 유효성 여부를 저장할 변수를 만들고, 초기값 false 부여
+      let isPasswordValid = false;
+      // 비밀번호 정규식 패턴
+      const pwPattern = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
+
+      // id가 id 인 input 요소에 input 이벤트가 일어났을 때 실행할 함수 등록
+      document.querySelector('#id').addEventListener("input", function(){
+        // 입력한 value 값을 읽어온다.
+        let inputId = this.value;
+        // 유효성을 검증한다. (이메일 정규식 패턴과 같은지)
+        isIdValid = idPattern.test(inputId);
+        // 유효하다면 input 요소에 is-valid 클래스 추가, 아니면 is-invalid 클래스 추가
+        if(isIdValid){
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+        } else{
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+        }
+      });
+
+      // 같은 방식으로 비밀번호 유효성 검사도 실행
+      document.querySelector('#pw').addEventListener("input", function(){
+        let inputPw = this.value;
+        isPasswordValid = pwPattern.test(inputPw);
+        if(isPasswordValid){
+          this.classList.remove('is-invalid');
+          this.classList.add('is-valid');
+        } else{
+          this.classList.remove('is-valid');
+          this.classList.add('is-invalid');
+        }
+      });
+
+      // submit 이벤트가 일어 났을 때 실행할 수 있게 함
+      document.querySelector('#signupForm').addEventListener("submit", function(e){
+        // 만약 폼이 유효하지 않다면 전송 막기
+        if(!isIdValid || !isPasswordValid){
+          e.preventDefault();
+          alert("이메일과 비밀번호를 올바르게 입력해주세요.");
+          return false;
+        }
+        return true;
+      });
+    });
+  </script>
+
+  <!-- 패스워드 보이고 안보이고 -->
+  <script>
+    // 처음의 상태를 false로 줌 = input 타입이 password일 때 (가려진 상태)
+    let passwordEye = false;
+
+    // 눈모양 아이콘 클릭시
+    function toggleEye() {    // 함수로 만들어주기
+      const eyeIcon = document.querySelector('.eye_icon');    //아이콘 클래스 주고 변수 선언
+
+      // 클래스 넣고, 지우고
+      if (passwordEye) {    // passwordEye 변수가 true(비밀번호 보이는 상태일 때)
+        eyeIcon.classList.remove('bi-eye');
+        eyeIcon.classList.add('bi-eye-slash');
+      } else {    // passwordEye 변수가 false(비밀번호 안 보이는 상태일 때)
+        eyeIcon.classList.remove('bi-eye-slash');
+        eyeIcon.classList.add('bi-eye');
       }
-      if(pw.value.trim() == ''){
-        alert('패스워드를 입력하세요.');
-        pw.focus();
-        return false;
-      }
-      return true;
-    };
+
+      // input 타입 변경을 위한 변수 선언 (pw를 변수로 담음)
+      const passwordInput = document.getElementById('pw');
+      passwordInput.type = passwordEye ? 'password' : 'text';   // 변수로 담은 인풋 pw가 true 일 때 password 타입으로, false일 때 text 타입으로 (삼항연산자)
+
+      // 아이콘 상태 토글 true를 false로, false를 true로 바꿔줄 수 있음
+      passwordEye = !passwordEye;
+    }
+
+    // 눈모양 아이콘을 클릭했을 때 toggleEye 함수 실행
+    document.querySelector('.eye_icon').addEventListener('click', toggleEye);
+  </script>
+
+  <!-- 카카오톡 로그인 -->
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init('882c925fe653067057ded7c6bd865a96');
+
+    // sdk초기화여부판단
+    console.log(Kakao.isInitialized());
+    //카카오로그인 
+    function kakaoLogin() {
+      //Kakao.Auth.authorize()
+      Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({ 
+          url: '/v2/user/me', success: function (response) {
+              console.log(response)
+            }, fail: function (error) { 
+              console.log(error)
+            }, 
+          })
+          }, fail: function (error) { 
+          console.log(error) 
+        }, 
+      }) 
+    } 
+
+    //카카오로그아웃 
+    function kakaoLogout() {
+      if (Kakao.Auth.getAccessToken()) { 
+        Kakao.API.request({
+          url: '/v1/user/unlink',
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+        // Kakao.API.request({ 
+        // url: '/v1/user/unlink', success: function (response) { 
+        // console.log(response) 
+        // }, fail: function (error) { 
+        //   console.log(error) }, 
+        //});
+      Kakao.Auth.setAccessToken(undefined) 
+    }}
   </script>
 </body>
 </html>
