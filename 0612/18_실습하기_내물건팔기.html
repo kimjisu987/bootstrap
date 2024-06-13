@@ -13,9 +13,14 @@
   <style>
     body{max-width: 1000px; margin: 0 auto;}
     .row{margin: 0px;}
-    header{border-bottom: 1px solid #eee;}
+    header{
+      max-width: 1000px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 9999;
+    }
     .header_con{padding-inline: 1rem;}
-    main{padding-inline: 1rem;}
+    main{padding-inline: 1rem; padding-top: 50px;}
 
     header > div{align-items: center;}
     header > div > div:nth-of-type(2){text-align: center;}
@@ -76,12 +81,12 @@
 </head>
 <body>
   <!-- 헤더 -->
-  <header>
-    <div class="container-fluid row header_con" style="height: 50px;">
-      <div class="col"><a href="#" title="닫기"><i class="bi bi-x-lg"></i></a></div>
-      <div class="col"><h1 class="fs-5 fw-bold" style="margin-bottom: 0px;">내 물건 팔기</h1></div>
-      <div class="col"><a href="#" title="임시저장">임시저장</a></div>
-    </div>
+  <header class="position-fixed" style="width: 100%;">
+      <div class="container-fluid row header_con" style="height: 50px;">
+        <div class="col"><a href="#" title="닫기"><i class="bi bi-x-lg"></i></a></div>
+        <div class="col"><h1 class="fs-5 fw-bold" style="margin-bottom: 0px;">내 물건 팔기</h1></div>
+        <div class="col"><a href="#" title="임시저장">임시저장</a></div>
+      </div>
   </header>
 
   <!-- 메인 -->
